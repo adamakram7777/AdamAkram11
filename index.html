@@ -30,48 +30,6 @@
     gtag('config', 'G-YV036LRLTT');
   </script>
 
-  <script>
-    // Scroll up button
-const scrollBtn = document.querySelector(".scroll-up");
-const navToggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector(".nav-menu");
-const bars = document.querySelector(".fa-bars");
-const xMark = document.querySelector(".fa-xmark");
-const navList = document.querySelectorAll(".nav-list");
-
-// Scroll up button
-window.onscroll = () => {
-  if (document.documentElement.scrollTop > 100) {
-    scrollBtn.classList.add("top");
-  } else {
-    scrollBtn.classList.remove("top");
-  }
-};
-
-// show menu
-navToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  bars.classList.toggle("active");
-  xMark.classList.toggle("active");
-});
-
-// hide menu
-navList.forEach((item) => {
-  item.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-    bars.classList.toggle("active");
-    xMark.classList.toggle("active");
-  });
-});
-
-// disable right click
-document.addEventListener("contextmenu", function (event) {
-  event.preventDefault();
-});
-  </script>
-
-
-
   <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Saira:wght@700&display=swap");
 
@@ -402,35 +360,52 @@ a {
 /* Projects Start */
 #projects .row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 2rem;
   row-gap: 2rem;
   margin-top: 3rem;
 }
 
-#projects .row .card .card-content {
-  padding: 1.5rem;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-#projects .row .card .card-content h3 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-#projects .row .card .card-content p {
-  font-size: 14px;
-  margin: 10px 0 20px;
-}
-
-#projects img {
+#projects .row .project-link {
   display: block;
-  width: 100%;
-  height: 180px;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--primary-color);
+  border: 2px solid transparent;
+}
+
+#projects .row .project-link:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--secondary-color);
+  transform: translateY(-5px);
+}
+
+#projects .row .project-link h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+#projects .row .project-link .project-url {
+  font-size: 14px;
+  color: var(--secondary-color);
+  word-break: break-all;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #e9ecef;
+}
+
+#projects .row .project-link i {
+  font-size: 30px;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
 }
 
 #projects .new {
@@ -674,8 +649,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #projects .row,
-  #tutorials .tutorials-content .row {
+  #projects .row {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
@@ -718,8 +692,7 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  #projects .row,
-  #tutorials .tutorials-content .row {
+  #projects .row {
     grid-template-columns: 1fr;
   }
   
@@ -855,57 +828,25 @@ a {
         </div>
         <div class="row">
 
-          <div class="card">
-            <img src="https://i.postimg.cc/PqXG6dgX/Untitled.png" alt="Professional Portfolio" loading="lazy">
-            <div class="card-content">
-              <h3>Professional Portfolio</h3>
-              <p>An advanced and professional portfolio website showcasing videos, images, projects, and work samples with modern design and interactive features.</p>
-              <a href="#" class="btn-primary" target="_blank"
-                rel="noopener noreferrer">Visit
-                Website</a>
-            </div>
-          </div>
+          <a href="https://alakramnursery.com" class="project-link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-external-link-alt"></i>
+            <h3>Al Akram Nursery</h3>
+            <div class="project-url">https://alakramnursery.com</div>
+          </a>
 
-          <div class="card">
-            <img src="https://i.postimg.cc/kMszYrnw/Untitled.png" alt="Book Store" loading="lazy">
-            <div class="card-content">
-              <h3>Book Store</h3>
-              <p>Book Store is a website for an author that sells his books</p>
-              <div class="links">
-                <a href="https://mohamedelkashef15.github.io/Book-Store/" class="btn-primary" target="_blank"
-                  rel="noopener noreferrer">Visit
-                  Website</a>
-              </div>
-            </div>
-          </div>
+          <a href="https://www.itcore-eg.com/" class="project-link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-external-link-alt"></i>
+            <h3>IT Core Egypt</h3>
+            <div class="project-url">https://www.itcore-eg.com/</div>
+          </a>
 
-          <div class="card">
-            <img src="https://i.postimg.cc/0j7p31Sn/Untitled.png" alt="Kitchen Store" loading="lazy">
-            <div class="card-content">
-              <h3>Kitchen Store</h3>
-              <p>A modern e-commerce website for kitchen equipment and accessories, featuring a clean design and user-friendly shopping experience.</p>
-              <div class="links">
-                <a href="#" class="btn-primary" target="_blank"
-                  rel="noopener noreferrer">Visit
-                  Website</a>
-              </div>
-            </div>
-          </div>
+          <a href="https://adamakram7777.github.io/wether/" class="project-link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-external-link-alt"></i>
+            <h3>Weather App</h3>
+            <div class="project-url">https://adamakram7777.github.io/wether/</div>
+          </a>
 
-          <div class="card">
-            <img src="https://i.postimg.cc/ry4z5JM8/Untitled.gif" alt="Image Filter" loading="lazy">
-            <div class="card-content">
-              <h3>Filter</h3>
-              <p>An advanced image processing application that applies blue filters and color transformations to images, featuring real-time preview and multiple filter options.</p>
-              <div class="links">
-                <a href="#" class="btn-primary" target="_blank"
-                  rel="noopener noreferrer">Visit
-                  Website</a>
-              </div>
-            </div>
-          </div>
         </div>
-        <p class="new">New Projects are comming soon.. ❤️</p>
       </div>
     </section>
     <!-- Projects End -->
@@ -914,42 +855,56 @@ a {
     <section id="contact">
       <div class="container">
         <div class="title">
-          <h2>
-            <i class="fa-solid fa-headset"></i> Get In <span class="text-primary">Touch</span>
-          </h2>
+          <h2><i class="fa-solid fa-headset"></i> Get In <span class="text-primary">Touch</span></h2>
           <hr>
         </div>
         <div class="row">
           <div class="contact-info">
-            <h3>Contact me directly via WhatsApp</h3>
-            <p>Send me a message on WhatsApp and I'll get back to you as soon as possible</p>
-            <a href="https://wa.me/2001501045046" class="btn-primary whatsapp-btn" target="_blank">
-              Contact via WhatsApp
+            <h3>Let's work together!</h3>
+            <p>I'm always excited to work on new projects and help bring your ideas to life. Whether you need a professional portfolio, a modern landing page, or a complete web application, I'm here to help.</p>
+            
+            <a href="https://wa.me/2001501045046" class="btn-primary whatsapp-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> Contact on WhatsApp
             </a>
-            <div class="contact-details" style="margin-top: 2rem;">
+            
+            <div class="contact-details">
+              <p><i class="fa-solid fa-user"></i> Adam Akram Mohamed</p>
               <p><i class="fa-solid fa-phone"></i> +20 01501045046</p>
-              <p><i class="fa-solid fa-envelope"></i> adamakram515@gmail.com</p>
-              <p><i class="fa-solid fa-map-pin"></i> Egypt</p>
+              <p><i class="fa-solid fa-envelope-open"></i> adamakram515@gmail.com</p>
             </div>
           </div>
-          <div class="contact-image">
-            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="Contact Us" style="max-width: 300px;">
+          <div class="contact-form">
+            <img src="https://i.postimg.cc/sXHZDxj2/480755856-2458612474506738-2506931813050924253-n.jpg" alt="Adam Akram Contact" style="width: 100%; border-radius: 10px;">
           </div>
         </div>
       </div>
     </section>
     <!-- Contact End -->
   </main>
+
   <!-- Footer Start -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
         <div class="row">
           <div class="col-1">
-            <h3>Adam Akram </h3>
-            <p>Welcome to my Portfolio! ❤️ I'm glad you're interested in getting in touch with me.</p>
+            <h3>Adam Akram</h3>
+            <p>Front-end Developer specializing in creating modern, responsive websites and web applications. Passionate about delivering exceptional digital solutions that help businesses and individuals establish their online presence.</p>
+            <p>Let's connect and bring your ideas to life with clean, professional web development.</p>
+          </div>
+          <div class="col-2">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <h3>Follow Me</h3>
             <div class="social">
-              <a href="https://www.youtube.com/@adamakramDontForgetMe" target="_blank" aria-label="Adam Akram Mohamed YouTube">
+              <a href="https://www.youtube.com/@adamakramDontForgetMe" target="_blank" aria-label="Adam Akram YouTube">
                 <i class="fa-brands fa-youtube"></i>
               </a>
               <a href="https://wa.me/2001501045046" target="_blank" aria-label="Adam Akram WhatsApp">
@@ -959,21 +914,7 @@ a {
                 <i class="fa-solid fa-envelope"></i>
               </a>
             </div>
-          </div>
-          <div class="col-2">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="">Portfolio Websites for Companies</a></li>
-              <li><a href="">Custom Landing Pages</a></li>
-              <li><a href="">HTML, CSS, JavaScript Development</a></li>
-              <li><a href="">React Applications</a></li>
-              <li><a href="">Responsive Web Design</a></li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <h3>Have a question?</h3>
-            <p><i class="fa-solid fa-map-pin"></i> Egypt</p>
-            <p><i class="fa-solid fa-phone-alt"></i> +20 01501045046</p>
+            <p><i class="fa-solid fa-phone"></i> +20 01501045046</p>
             <p><i class="fa-solid fa-envelope-open"></i> adamakram515@gmail.com</p>
           </div>
         </div>
